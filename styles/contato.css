@@ -12,6 +12,9 @@
 }
 .contato__texto {
     margin-top: 1em;
+    width: 60%;
+    text-align: left;
+    margin-bottom: 1.5em;
 }
 .contato__email {
     padding: 1em 0 1em 2.5em;
@@ -44,7 +47,19 @@
         width: 30%;
     }
     .contato__titulo {
+        text-align: left;
         font-size: 24px;
+    }
+    .contato__texto {
+        margin-bottom: 0;
+    }
+    
+}
+@media screen and (min-width: 1728px)
+{
+    .contato {
+        padding: 3em 10vw;
+        gap: 1.5em;
     }
     
 }

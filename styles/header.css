@@ -1,6 +1,6 @@
 .cabeçalho__menu-hamburguer {
-    width: 24px;
-    height: 24px;
+    width: 80px;
+    height: 80px;
     background-image: url("../img/Menu.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -10,7 +10,6 @@
 .cabeçalho {
     background-color: var(--branco);
     display: flex;
-    padding: 0em 2em;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -23,13 +22,14 @@
 }
 
 .container__usuario {
+    margin-right: 1em;
     display: flex;
     gap: 1em;
 
 }
 
 .container__imagem {
-    padding: 1em 0;
+    padding: 0em 0;
 }
 
 .container__logo {
@@ -40,8 +40,10 @@
 .lista-menu {
     display: none;
     position: absolute;
+    left: 0;
     top: 100%;
-    width: 60vw;
+    width: 70vw;
+    
 }
 
 .container__botao:checked~.lista-menu {
@@ -67,11 +69,19 @@
     text-transform: uppercase;
 }
 
-.container__botao, .opcoes, .container__texto {
+.container__botao, .opcoes, .container__texto, .container__titulo {
     display: none;
 }
 
+.container__botao:checked ~ .container__rotulo > .cabeçalho__menu-hamburguer {
+    background-image: url("../img/closed.svg");
+}
+
 @media screen and (min-width: 1024px) {
+    .cabeçalho {
+        padding: 0 2em;
+    }
+    
     .container__titulo,
      .container__titulo-negrito {
         font-family: var(--fonte-secundaria);
@@ -79,6 +89,7 @@
     }
 
     .container__titulo {
+        display: block;
         font-weight: 400;
     }
     .container__titulo-negrito {
@@ -97,17 +108,40 @@
         color: var(--preto);
     }
     
-    .opcoes__botao:checked ~ .lista-menu    {
+    .lista-menu {
+        left: auto;
+    }
+
+    .opcoes__botao:checked ~.lista-menu{
         display: block;
         width: auto;
     }
     .container__usuario {
         gap: 3.7em;   
     }
-        
-    .container__imagem-transparente, .cabeçalho__menu-hamburguer, .opcoes__botao,  .container__texto  {
-        display: none;
+    .container__imagem-transparente, .cabeçalho__menu-hamburguer, .opcoes__botao, .container__texto  {
+        display: none;  
     }
+
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+    .opcoes__item {
+        padding: 2em 1em;
+    }
+    .lista-menu__item:hover {
+        background: var(--azul-degrade);
+}
+    .lista-menu__item:hover > .lista-menu__link {
+        -webkit-text-fill-color: var(--branco);
+    }   
+    .lista-menu__link {
+        text-decoration: none;
+
+    }
+
+    
 
     @media screen and (min-width: 1728px) {
 
